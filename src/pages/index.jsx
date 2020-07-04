@@ -28,7 +28,7 @@ export default function Index(props) {
       }}
     >
       <BackgroundCarousel />
-      <Container maxWidth="md" style={{ border: "1px solid black" }}>
+      <Container maxWidth="lg" style={{ border: "1px solid black" }}>
         hello
       </Container>
       {/* <Grid>

@@ -5,9 +5,6 @@ import { Grid, makeStyles } from "@material-ui/core";
 import { Carousel } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Path from "path";
-// import Slider from "react-slick";
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
 
 const useStyles = makeStyles({
   grid: {
@@ -28,11 +25,16 @@ const imagePaths = [
 
 export default function BackgroundCarousel() {
   const carouselIndex = useSelector((state) => state.carouselIndex.value);
-  console.log(carouselIndex);
   const classes = useStyles();
+  const settings = {
+    activeIndex: carouselIndex,
+    pause: false,
+    controls: false,
+    indicators: false
+  };
   return (
     <Grid className={classes.grid}>
-      <Carousel pause={false} controls={false} indicators={false}>
+      <Carousel {...settings}>
         {imagePaths.map((path, i) => (
           <Carousel.Item key={i}>
             <img src={path} alt={Path.basename(path)} />
