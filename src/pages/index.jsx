@@ -4,7 +4,8 @@ import "../client/styles/App.scss";
 import "../client/styles/App.css";
 import "../client/styles/App.less";
 import "../client/styles/App.styl";
-import { Container, Grid, Typography, Link } from "@material-ui/core";
+import { Container, Grid, Typography, Link, Avatar } from "@material-ui/core";
+import { grey } from "@material-ui/core/colors";
 import Nav from "../client/js/components/Nav";
 import DemoWrapper from "../client/js/components/DemoWrapper";
 import ModuledStyleDemo from "../client/js/components/Home/ModuledStyleDemo";
@@ -17,10 +18,40 @@ export default function Index(props) {
   console.log(shows);
   return (
     <Fragment>
-      <Nav />
-      <Container maxWidth="md">
-        <Grid container>
-          <DemoWrapper title="Personal Page is in Actively Build">
+      {/* <Nav /> */}
+      {/* <Container> */}
+      <Grid
+        direction="row"
+        container
+        item
+        alignItems="center"
+        justify="center"
+        style={{ height: "100vh", width: "100vw", background: grey[300] }}
+      >
+        <Grid>
+          <Grid container item justify="center">
+            <Avatar
+              alt="Remy Sharp"
+              src="/photo.jpg"
+              style={{ width: "80px", height: "80px" }}
+            />
+          </Grid>
+          <Grid>
+            <Typography variant="h4" style={{ textAlign: "center" }}>
+              Personal Page is in Actively Build
+            </Typography>
+          </Grid>
+          <Grid>
+            <Typography variant="h5" style={{ textAlign: "center" }}>
+              Please visit my{" "}
+              <Link href="https://www.linkedin.com/in/zuhuihe/">
+                <strong>LinkedIn</strong>
+              </Link>{" "}
+              page instead for now
+            </Typography>
+          </Grid>
+        </Grid>
+        {/* <DemoWrapper title="Personal Page is in Actively Build">
             <Typography>
               Please visit my{" "}
               <Link href="https://www.linkedin.com/in/zuhuihe/">
@@ -37,9 +68,9 @@ export default function Index(props) {
           </DemoWrapper>
           <DemoWrapper title="Apollo Graphql Demo">
             <ApolloGraphqlDemo />
-          </DemoWrapper>
-        </Grid>
-      </Container>
+          </DemoWrapper> */}
+      </Grid>
+      {/* </Container> */}
     </Fragment>
   );
 }
