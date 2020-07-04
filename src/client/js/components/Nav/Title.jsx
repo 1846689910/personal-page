@@ -19,7 +19,7 @@ export default function Title({ classes }) {
         justify="space-between"
       >
         <Typography variant="h4" onClick={() => router.push("/")}>
-          Type 18 next
+          Personal Page
         </Typography>
         <MediaChip />
       </Grid>
