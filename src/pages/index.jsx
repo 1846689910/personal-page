@@ -4,7 +4,7 @@ import "../client/styles/App.scss";
 import "../client/styles/App.css";
 import "../client/styles/App.less";
 import "../client/styles/App.styl";
-import { Container, Grid } from "@material-ui/core";
+import { Container, Grid, Typography, Link } from "@material-ui/core";
 import Nav from "../client/js/components/Nav";
 import DemoWrapper from "../client/js/components/DemoWrapper";
 import ModuledStyleDemo from "../client/js/components/Home/ModuledStyleDemo";
@@ -20,6 +20,15 @@ export default function Index(props) {
       <Nav />
       <Container maxWidth="md">
         <Grid container>
+          <DemoWrapper title="Personal Page is in Actively Build">
+            <Typography>
+              Please visit my{" "}
+              <Link href="https://www.linkedin.com/in/zuhuihe/">
+                <strong>LinkedIn</strong>
+              </Link>{" "}
+              page instead for now
+            </Typography>
+          </DemoWrapper>
           <DemoWrapper title="CSS Module Demo">
             <ModuledStyleDemo />
           </DemoWrapper>
@@ -35,21 +44,22 @@ export default function Index(props) {
   );
 }
 Index.propTypes = {
-  shows: PropTypes.array
+  shows: PropTypes.array,
 };
 
 /**
  * @description dev server end-point for path `/`, please check https://nextjs.org/docs/basic-features/data-fetching#getserversideprops-server-side-rendering
  * @param {Object} context { env }
  */
-export async function getStaticProps(context){
+export async function getStaticProps(context) {
   console.log(context);
   const data = await Promise.resolve([{ show: 1 }, { show: 2 }, { show: 3 }]);
   console.log(`Show data fetched on server side. Count: ${data.length}`);
   return {
-    props: {  // will be passed to the page component as props
-      shows: data.map(entry => entry.show)
-    }
+    props: {
+      // will be passed to the page component as props
+      shows: data.map((entry) => entry.show),
+    },
   };
 }
 // Index.getInitialProps is deprecated
