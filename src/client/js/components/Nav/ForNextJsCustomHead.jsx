@@ -6,7 +6,7 @@ export default function ForNextJsCustomHead({ asPath }) {
   const atHome = asPath === "/";
   return (
     <Head>
-      <title>{`type-18-next ${atHome ? "" : asPath}`}</title>
+      <title>{`Personal Page ${atHome ? "" : asPath}`}</title>
       {asPath && (
         <link
           key="leaflet-css"

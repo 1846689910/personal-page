@@ -1,8 +1,8 @@
-<h1>type-18-next</h1>
+<h1>Personal Page</h1>
 
-[![travis build][travis build]][travis build-url]
+<!-- [![travis build][travis build]][travis build-url]
 
-#### [Demo](https://type-18-next.vercel.app/)
+#### [Demo](https://type-18-next.vercel.app/) -->
 
 <h2>contents</h2>
 

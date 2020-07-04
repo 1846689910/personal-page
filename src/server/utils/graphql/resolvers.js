@@ -18,7 +18,7 @@ const localMockDataFetch = () => {
 
 module.exports = {
   Query: {
-    hello: () => "Hello, type-18-next is now boosted by Apollo + GraphQL",
+    hello: () => "Hello, personal-page is now boosted by Apollo + GraphQL",
     landmark: ({ id }) => localMockDataFetch().find(x => x.id === id),
     landmarks() {
       const landmarks = localMockDataFetch();
