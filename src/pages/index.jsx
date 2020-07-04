@@ -32,7 +32,7 @@ export default function Index(props) {
           <Grid container item justify="center">
             <Avatar
               alt="Remy Sharp"
-              src="/photo.jpg"
+              src="/avatar.jpg"
               style={{ width: "80px", height: "80px" }}
             />
           </Grid>
