@@ -1,8 +1,10 @@
 <h1>Personal Page</h1>
 
-<!-- [![travis build][travis build]][travis build-url]
+#### [Demo](https://zuhuihe.vercel.app)
 
-#### [Demo](https://type-18-next.vercel.app/) -->
+```
+https://zuhuihe.vercel.app
+```
 
 <h2>contents</h2>
 
@@ -140,6 +142,3 @@ define the end points in `src/pages` and create file like `alive.jsx`, which wil
     - use `resolvers` and `typeDefs` in `./src/server/utils/graphql`
     - use `apollo-server-hapi/koa/express` for hapi/koa/express server respectively
     - the used apollo middleware/server will read data from `./src/data/landmarks.geo.json` with node.js `fs` to mock up the process of data fetching.
-
-[travis build]: https://travis-ci.org/1846689910/type-18-next.svg?branch=master
-[travis build-url]: https://travis-ci.org/1846689910/type-18-next
