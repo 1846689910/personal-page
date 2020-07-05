@@ -27,6 +27,7 @@ const useStyles = makeStyles((theme) => ({
   bottomGrid: {
     position: "absolute",
     bottom: 0,
+    left: "10vw"
   },
   bottomGridInner: {
     height: "40px",
@@ -47,8 +48,8 @@ export default function PageWrapper({ children }) {
       <Container maxWidth="lg" className={classes.container}>
         <Nav />
         {children}
-        <BottomLinks {...{ classes }} />
       </Container>
+      <BottomLinks {...{ classes }} />
     </Grid>
   );
 }
