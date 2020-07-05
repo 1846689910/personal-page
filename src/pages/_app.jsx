@@ -10,6 +10,7 @@ import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "@apollo/react-hooks";
 import { MediaQueryProvider } from "../client/js/components/MediaQueryContext";
 import fetch from "node-fetch";
+import PageWrapper from "../client/js/components/PageWrapper";
 
 global.fetch = fetch;
 
@@ -25,7 +26,7 @@ class _App extends App {
   render() {
     const { Component, pageProps, store } = this.props;
     const apolloClient = new ApolloClient({
-      uri: _App.graphqlUri
+      uri: _App.graphqlUri,
     });
     return (
       <Provider store={store}>
@@ -34,7 +35,9 @@ class _App extends App {
             <CssBaseline />
             {/* Kickstart an elegant, consistent, and simple baseline to build upon. */}
             <MediaQueryProvider>
-              <Component {...pageProps} />
+              <PageWrapper>
+                <Component {...pageProps} />
+              </PageWrapper>
             </MediaQueryProvider>
           </ThemeProvider>
         </ApolloProvider>

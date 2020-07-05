@@ -1,10 +1,8 @@
 import React from "react";
-import PropTypes from "prop-types";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { Grid, makeStyles } from "@material-ui/core";
 import { Carousel } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Path from "path";
 
 const useStyles = makeStyles({
   grid: {
@@ -30,14 +28,21 @@ export default function BackgroundCarousel() {
     activeIndex: carouselIndex,
     pause: false,
     controls: false,
-    indicators: false
+    indicators: false,
   };
   return (
     <Grid className={classes.grid}>
       <Carousel {...settings}>
         {imagePaths.map((path, i) => (
           <Carousel.Item key={i}>
-            <img src={path} alt={Path.basename(path)} />
+            <div
+              style={{
+                background: `url(${path}) no-repeat`,
+                backgroundSize: "cover",
+                height: "100vh",
+                width: "100vw",
+              }}
+            />
           </Carousel.Item>
         ))}
       </Carousel>
