@@ -11,7 +11,7 @@ import Nav from "./Nav1";
 import BackgroundCarousel from "./Home/BackgroundCarousel";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GitHubIcon from "@material-ui/icons/GitHub";
-import FacebookIcon from "@material-ui/icons/Facebook";
+// import FacebookIcon from "@material-ui/icons/Facebook";
 import EmailIcon from "@material-ui/icons/Email";
 
 const useStyles = makeStyles((theme) => ({
