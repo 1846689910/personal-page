@@ -56,6 +56,11 @@ export default function Index(props) {
           Zuhui(Eric) He
         </Typography>
       </Grid>
+      <Grid item container justify="center">
+        <Typography className={classes.name} variant="h4">
+          Software Engineer @ Apple Inc.
+        </Typography>
+      </Grid>
       <Grid container item justify="center">
         <Grid item className={classes.descOuter}>
           <Typography variant="body1" className={classes.desc}>
