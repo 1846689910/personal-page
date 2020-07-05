@@ -18,6 +18,8 @@ export const INSTITUTE_ICON_PATH = {
   UDACITY: "/images/udacity.jpg",
   YANSHAN: "images/yanshan.png",
   ORACLE: "/images/oracle.png",
+  APPLE: "/images/apple.png",
+  WALMART_LABS: "/images/walmart-labs.png"
 };
 
 export const TABS = [
