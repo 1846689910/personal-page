@@ -4,6 +4,7 @@ import { Grid, Button, makeStyles } from "@material-ui/core";
 import clsx from "clsx";
 import { useDispatch } from "react-redux";
 import { setCarouselIndexAction } from "../../settings/actions";
+import { TABS } from "../../constants";
 
 const useStyles = makeStyles((theme) => ({
   grid: {
@@ -25,14 +26,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const tabs = [
-  { path: "/", label: "intro" },
-  { path: "/education", label: "education" },
-  { path: "/skills", label: "skills" },
-  { path: "/experiences", label: "experiences" },
-  { path: "/contact", label: "contact" },
-];
-
 export default function Nav() {
   const router = useRouter();
   const classes = useStyles();
@@ -43,7 +36,7 @@ export default function Nav() {
   };
   return (
     <Grid container justify="space-evenly" className={classes.grid}>
-      {tabs.map((tab, i) => (
+      {TABS.map((tab, i) => (
         <Button
           key={i}
           variant="contained"
