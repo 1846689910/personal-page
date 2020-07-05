@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     background: theme.palette.panel.dark,
   },
   grid: {
-    margin: "10px 0",
+    margin: "10px",
     position: "relative",
   },
   paperGrid: {

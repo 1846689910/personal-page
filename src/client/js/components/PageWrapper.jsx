@@ -27,7 +27,8 @@ const useStyles = makeStyles((theme) => ({
   bottomGrid: {
     position: "absolute",
     bottom: 0,
-    left: "10vw"
+    left: "10vw",
+    maxWidth: "200px"
   },
   bottomGridInner: {
     height: "40px",

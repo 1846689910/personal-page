@@ -5,9 +5,17 @@ import {
   Accordion,
   AccordionSummary,
   AccordionDetails,
+  makeStyles
 } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { get } from "lodash";
+
+const useStyles = makeStyles((theme) => ({
+  accordion: {
+    width: "90%",
+    background: theme.palette.panel.dark,
+  },
+}));
 
 export class AccordionData {
   /**
@@ -24,6 +32,7 @@ export class AccordionData {
 }
 
 export default function ControlledAccordion({ dataArray }) {
+  const classes = useStyles();
   const [expanded, setExpanded] = useState(get(dataArray, "0.group", false));
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
@@ -35,7 +44,7 @@ export default function ControlledAccordion({ dataArray }) {
           key={i}
           expanded={expanded === group}
           onChange={handleChange(group)}
-          style={{ width: "90%" }}
+          className={classes.accordion}
         >
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
             {summary}
