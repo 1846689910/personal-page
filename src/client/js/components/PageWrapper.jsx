@@ -21,6 +21,8 @@ const useStyles = makeStyles((theme) => ({
   },
   container: {
     position: "relative",
+    height: "100vh",
+    overflow: "scroll",
   },
   bottomGrid: {
     position: "absolute",

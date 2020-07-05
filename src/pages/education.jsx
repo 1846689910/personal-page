@@ -1,17 +1,18 @@
 import React from "react";
-import {
-  Grid,
-  Typography,
-  makeStyles
-} from "@material-ui/core";
+import { Grid, Typography, makeStyles } from "@material-ui/core";
 import { IMAGE_PATH } from "../client/js/constants";
 import EduItem from "../client/js/components/Education/EduItem";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   title: {
-    marginTop: "20px"
-  }
-});
+    marginTop: "20px",
+  },
+  grid: {
+    background: theme.palette.panel.dark,
+    height: "35vh",
+    overflow: "scroll",
+  },
+}));
 
 const educations = [
   {
@@ -43,8 +44,7 @@ const certificates = [
     imageSrc: IMAGE_PATH.SU,
     imageAlt: "Syracuse University",
     institute: "Syracuse University",
-    degree:
-      "Certificate of Advanced Study in Data Science",
+    degree: "Certificate of Advanced Study in Data Science",
     range: "May 2015 - Dec 2015",
   },
   {
@@ -67,14 +67,22 @@ export default function Education() {
   const classes = useStyles();
   return (
     <Grid container direction="column">
-      <Typography variant="h5" className={classes.title}>DEGREES</Typography>
-      {educations.map((x, i) => (
-        <EduItem {...x} key={i} />
-      ))}
-      <Typography variant="h5" className={classes.title}>CERTIFICATES</Typography>
-      {certificates.map((x, i) => (
-        <EduItem {...x} key={i} />
-      ))}
+      <Typography variant="h5" className={classes.title}>
+        DEGREES
+      </Typography>
+      <Grid className={classes.grid}>
+        {educations.map((x, i) => (
+          <EduItem {...x} key={i} />
+        ))}
+      </Grid>
+      <Typography variant="h5" className={classes.title}>
+        CERTIFICATES
+      </Typography>
+      <Grid className={classes.grid}>
+        {certificates.map((x, i) => (
+          <EduItem {...x} key={i} />
+        ))}
+      </Grid>
     </Grid>
   );
 }

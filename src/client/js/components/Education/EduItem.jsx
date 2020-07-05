@@ -2,17 +2,16 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Grid, makeStyles, Typography, Avatar } from "@material-ui/core";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles({
   avatar: {
     width: "80px",
     height: "80px",
   },
   textOuter: {
-    background: theme.palette.panel.dark,
     width: "70%",
-    padding: "20px 40px",
+    margin: "10px 40px",
   },
-}));
+});
 
 export default function EduItem({
   imageSrc,
