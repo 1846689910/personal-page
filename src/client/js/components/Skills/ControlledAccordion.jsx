@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import {
   Grid,
@@ -14,6 +14,12 @@ const useStyles = makeStyles((theme) => ({
   accordion: {
     width: "100%",
     background: theme.palette.panel.dark,
+  },
+  gridOuter: {
+    width: "100%",
+  },
+  gridInner: {
+    width: "90%",
   },
 }));
 
@@ -38,8 +44,8 @@ export default function ControlledAccordion({ dataArray }) {
     setExpanded(isExpanded ? panel : false);
   };
   return (
-    <Grid container justify="center" style={{ width: "100%" }}>
-      <Grid item style={{ width: "90%" }} container direction="column">
+    <Grid container justify="center" className={classes.gridOuter}>
+      <Grid item className={classes.gridInner} container direction="column">
         {dataArray.map(({ summary, detail, group }, i) => (
           <Accordion
             key={i}
