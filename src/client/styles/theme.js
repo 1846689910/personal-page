@@ -14,7 +14,7 @@ export const theme = createMuiTheme({
     },
     panel: {
       main: "rgba(255,255,255, 0.5)",
-      dark: "rgba(255,255,255, 0.7)",
+      dark: "rgba(255,255,255, 0.85)",
     },
   },
 });

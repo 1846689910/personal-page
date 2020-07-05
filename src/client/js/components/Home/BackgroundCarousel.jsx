@@ -43,6 +43,16 @@ export default function BackgroundCarousel() {
                 width: "100vw",
               }}
             />
+            {/* <div
+              style={{
+                background: "gray",
+                backgroundSize: "cover",
+                height: "100vh",
+                width: "100vw",
+              }}
+            >
+              {path}
+            </div> */}
           </Carousel.Item>
         ))}
       </Carousel>
