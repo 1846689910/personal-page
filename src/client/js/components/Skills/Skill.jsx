@@ -1,46 +1,28 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import PropTypes from "prop-types";
 import {
   Grid,
-  Paper,
   makeStyles,
-  CircularProgress,
-  Avatar,
+  LinearProgress,
   Typography,
 } from "@material-ui/core";
 
-const useStyles = makeStyles((theme) => ({
-  paper: {
-    height: "180px",
-    width: "180px",
-    background: theme.palette.panel.dark,
-  },
+const useStyles = makeStyles({
   grid: {
-    margin: "10px",
+    height: "40px",
     position: "relative",
   },
-  paperGrid: {
-    height: "180px",
-    position: "relative",
+  progress: {
+    height: "15px",
   },
-  text: {
-    position: "absolute",
-    bottom: 0,
-  },
-  avatar: {
-    position: "absolute",
-    top: "60px",
-    width: "60px",
-    height: "60px",
-  },
-}));
+});
 
-export default function Skill({ name, value, src, avatarStyle }) {
+export default function Skill({ name, value }) {
   const classes = useStyles();
   const [usedValue, setUsedValue] = useState(0);
   useEffect(() => {
     const timer = setInterval(() => {
-      setUsedValue(prev => prev >= value ? value : prev + 5);
+      setUsedValue((prev) => (prev >= value ? value : prev + 5));
     }, 100);
     return () => {
       if (timer) clearInterval(timer);
@@ -48,37 +30,25 @@ export default function Skill({ name, value, src, avatarStyle }) {
   }, []);
 
   return (
-    <Grid item xs={2} className={classes.grid}>
-      <Paper elevation={3} className={classes.paper}>
-        <Grid
-          container
-          justify="center"
-          alignItems="center"
-          className={classes.paperGrid}
-        >
-          <Grid item>
-            <CircularProgress
-              variant="static"
-              value={usedValue}
-              size={110}
-              thickness={4}
-            />
-          </Grid>
-          <Avatar
-            src={src}
-            alt={name}
-            className={classes.avatar}
-            style={avatarStyle || {}}
+    <Grid container direction="row" item xs={12} className={classes.grid}>
+      <Grid item xs={2} container alignItems="center">
+        <Typography>
+          <strong>{name}</strong>
+        </Typography>
+      </Grid>
+      <Grid item xs={10} container alignItems="center">
+        <Grid item xs={12}>
+          <LinearProgress
+            variant="determinate"
+            value={usedValue}
+            className={classes.progress}
           />
-          <Typography className={classes.text}>{name}</Typography>
         </Grid>
-      </Paper>
+      </Grid>
     </Grid>
   );
 }
 Skill.propTypes = {
   name: PropTypes.string,
   value: PropTypes.number,
-  src: PropTypes.string,
-  avatarStyle: PropTypes.object,
 };

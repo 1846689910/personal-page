@@ -1,18 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, Fragment } from "react";
 import PropTypes from "prop-types";
 import {
   Grid,
   Accordion,
   AccordionSummary,
   AccordionDetails,
-  makeStyles
+  makeStyles,
 } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { get } from "lodash";
 
 const useStyles = makeStyles((theme) => ({
   accordion: {
-    width: "90%",
+    width: "100%",
     background: theme.palette.panel.dark,
   },
 }));
@@ -38,24 +38,26 @@ export default function ControlledAccordion({ dataArray }) {
     setExpanded(isExpanded ? panel : false);
   };
   return (
-    <Grid container justify="center">
-      {dataArray.map(({ summary, detail, group }, i) => (
-        <Accordion
-          key={i}
-          expanded={expanded === group}
-          onChange={handleChange(group)}
-          className={classes.accordion}
-        >
-          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-            {summary}
-          </AccordionSummary>
-          <AccordionDetails>
-            <Grid container item xs={12}>
-              {detail}
-            </Grid>
-          </AccordionDetails>
-        </Accordion>
-      ))}
+    <Grid container justify="center" style={{ width: "100%" }}>
+      <Grid item style={{ width: "90%" }} container direction="column">
+        {dataArray.map(({ summary, detail, group }, i) => (
+          <Accordion
+            key={i}
+            expanded={expanded === group}
+            onChange={handleChange(group)}
+            className={classes.accordion}
+          >
+            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+              {summary}
+            </AccordionSummary>
+            <AccordionDetails>
+              <Grid item xs={12}>
+                {detail}
+              </Grid>
+            </AccordionDetails>
+          </Accordion>
+        ))}
+      </Grid>
     </Grid>
   );
 }

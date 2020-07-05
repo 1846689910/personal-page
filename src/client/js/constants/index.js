@@ -20,15 +20,6 @@ export const INSTITUTE_ICON_PATH = {
   ORACLE: "/images/oracle.png",
 };
 
-/**
- * @description the skills icon would be better to choose square jpg/png with size <500 x <500
- */
-export const SKILLS_ICON_PATH = {
-  JS: "/skills-icon/js.png",
-  NODE_JS: "/skills-icon/node-js.png",
-  JAVA: "/skills-icon/java.png"
-};
-
 export const TABS = [
   { path: "/", label: "intro", bgPath: IMAGE_PATH.INTRO },
   { path: "/education", label: "education", bgPath: IMAGE_PATH.EDUCATION },
