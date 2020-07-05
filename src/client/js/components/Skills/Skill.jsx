@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import {
   Grid,
@@ -37,6 +37,16 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Skill({ name, value, src, avatarStyle }) {
   const classes = useStyles();
+  const [usedValue, setUsedValue] = useState(0);
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setUsedValue(prev => prev >= value ? value : prev + 5);
+    }, 100);
+    return () => {
+      if (timer) clearInterval(timer);
+    };
+  }, []);
+
   return (
     <Grid item xs={2} className={classes.grid}>
       <Paper elevation={3} className={classes.paper}>
@@ -49,7 +59,7 @@ export default function Skill({ name, value, src, avatarStyle }) {
           <Grid item>
             <CircularProgress
               variant="static"
-              value={value}
+              value={usedValue}
               size={110}
               thickness={4}
             />

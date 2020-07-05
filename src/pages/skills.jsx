@@ -4,15 +4,17 @@ import ControlledAccordion, {
   AccordionData,
 } from "../client/js/components/Skills/ControlledAccordion";
 import Skill from "../client/js/components/Skills/Skill";
+import { SKILLS_ICON_PATH } from "../client/js/constants";
 
 const webSkills = [
-  { name: "JavaScript", value: 85, src: "/skills-icon/js.png" },
-  { name: "Node.js", value: 75, src: "/skills-icon/node-js.png" },
+  { name: "JavaScript", value: 85, src: SKILLS_ICON_PATH.JS },
+  { name: "Node.js", value: 75, src: SKILLS_ICON_PATH.NODE_JS },
+  { name: "Java", value: 75, src: SKILLS_ICON_PATH.JAVA },
 ];
 
 const dataSkills = [
-  { name: "JavaScript", value: 85, src: "/skills-icon/js.png" },
-  { name: "Node.js", value: 75, src: "/skills-icon/node-js.png" },
+  { name: "JavaScript", value: 85, src: SKILLS_ICON_PATH.JS },
+  { name: "Node.js", value: 75, src: SKILLS_ICON_PATH.NODE_JS },
 ];
 
 export default function Skills() {

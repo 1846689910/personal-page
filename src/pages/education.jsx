@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid, Typography, makeStyles } from "@material-ui/core";
-import { IMAGE_PATH } from "../client/js/constants";
+import { INSTITUTE_ICON_PATH } from "../client/js/constants";
 import EduItem from "../client/js/components/Education/EduItem";
 
 const useStyles = makeStyles((theme) => ({
@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
 
 const educations = [
   {
-    imageSrc: IMAGE_PATH.SU,
+    imageSrc: INSTITUTE_ICON_PATH.SU,
     imageAlt: "Syracuse University",
     institute: "Syracuse University",
     degree:
@@ -24,14 +24,14 @@ const educations = [
     range: "May 2015 - Dec 2016",
   },
   {
-    imageSrc: IMAGE_PATH.SU,
+    imageSrc: INSTITUTE_ICON_PATH.SU,
     imageAlt: "Syracuse University",
     institute: "Syracuse University",
     degree: "M.S. in Mechanical Engineering, 3.6",
     range: "Aug 2013 - May 2015",
   },
   {
-    imageSrc: IMAGE_PATH.YANSHAN,
+    imageSrc: INSTITUTE_ICON_PATH.YANSHAN,
     imageAlt: "YanShan University",
     institute: "YanShan University",
     degree: "B.S. in Mechanical Engineering, 3.4",
@@ -41,21 +41,21 @@ const educations = [
 
 const certificates = [
   {
-    imageSrc: IMAGE_PATH.SU,
+    imageSrc: INSTITUTE_ICON_PATH.SU,
     imageAlt: "Syracuse University",
     institute: "Syracuse University",
     degree: "Certificate of Advanced Study in Data Science",
     range: "May 2015 - Dec 2015",
   },
   {
-    imageSrc: IMAGE_PATH.ORACLE,
+    imageSrc: INSTITUTE_ICON_PATH.ORACLE,
     imageAlt: "Oracle",
     institute: "Oracle",
     degree: "Oracle Certified Associate, Java SE 8 Programmer",
     range: "Nov 2016",
   },
   {
-    imageSrc: IMAGE_PATH.UDACITY,
+    imageSrc: INSTITUTE_ICON_PATH.UDACITY,
     imageAlt: "Udacity",
     institute: "Udacity",
     degree: "Front-End Web Developer Nanodegree",
