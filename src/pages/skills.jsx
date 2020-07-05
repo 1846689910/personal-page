@@ -27,26 +27,6 @@ const useStyles = makeStyles((theme) => ({
 const webSkills = [
   { name: "JavaScript", value: 85, src: "/skills-icon/js.png" },
   { name: "Node.js", value: 75, src: "/skills-icon/node-js.png" },
-  { name: "JavaScript", value: 85, src: "/skills-icon/js.png" },
-  { name: "Node.js", value: 75, src: "/skills-icon/node-js.png" },
-  { name: "JavaScript", value: 85, src: "/skills-icon/js.png" },
-  { name: "Node.js", value: 75, src: "/skills-icon/node-js.png" },
-  { name: "JavaScript", value: 85, src: "/skills-icon/js.png" },
-  { name: "Node.js", value: 75, src: "/skills-icon/node-js.png" },
-  { name: "JavaScript", value: 85, src: "/skills-icon/js.png" },
-  { name: "Node.js", value: 75, src: "/skills-icon/node-js.png" },
-  { name: "JavaScript", value: 85, src: "/skills-icon/js.png" },
-  { name: "Node.js", value: 75, src: "/skills-icon/node-js.png" },
-  { name: "JavaScript", value: 85, src: "/skills-icon/js.png" },
-  { name: "Node.js", value: 75, src: "/skills-icon/node-js.png" },
-  { name: "JavaScript", value: 85, src: "/skills-icon/js.png" },
-  { name: "Node.js", value: 75, src: "/skills-icon/node-js.png" },
-  { name: "JavaScript", value: 85, src: "/skills-icon/js.png" },
-  { name: "Node.js", value: 75, src: "/skills-icon/node-js.png" },
-  { name: "JavaScript", value: 85, src: "/skills-icon/js.png" },
-  { name: "Node.js", value: 75, src: "/skills-icon/node-js.png" },
-  { name: "JavaScript", value: 85, src: "/skills-icon/js.png" },
-  { name: "Node.js", value: 75, src: "/skills-icon/node-js.png" },
 ];
 
 const dataSkills = [
