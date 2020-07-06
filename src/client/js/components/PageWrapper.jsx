@@ -13,6 +13,7 @@ import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GitHubIcon from "@material-ui/icons/GitHub";
 // import FacebookIcon from "@material-ui/icons/Facebook";
 import EmailIcon from "@material-ui/icons/Email";
+import { LINKS } from "../constants";
 
 const useStyles = makeStyles((theme) => ({
   background: {
@@ -66,9 +67,9 @@ function BottomLinks({ classes }) {
   return (
     <Grid container justify="flex-start" className={classes.bottomGrid}>
       {[
-        { Icon: GitHubIcon, url: "https://github.com/1846689910" },
-        { Icon: LinkedInIcon, url: "https://www.linkedin.com/in/zuhuihe/" },
-        { Icon: EmailIcon, url: "mailto:eric14706@gmail.com" },
+        { Icon: GitHubIcon, url: LINKS.GITHUB },
+        { Icon: LinkedInIcon, url: LINKS.LINKEDIN },
+        { Icon: EmailIcon, url: LINKS.EMAIL },
         // { Icon: FacebookIcon, url: "https://www.facebook.com/wiesler.he" },
       ].map(({ Icon, url }, i) => (
         <Grid

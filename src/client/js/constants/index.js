@@ -8,6 +8,8 @@ export const IMAGE_PATH = {
   INTRO: "/images/intro.jpg",
   SKILLS: "/images/skills.jpg",
   EXPERIENCES: "/images/work-experiences.jpg",
+  WECHAT: "/images/wechat.png",
+  WECHAT_QR: "/images/wechatQR.png"
 };
 
 /**
@@ -19,7 +21,13 @@ export const INSTITUTE_ICON_PATH = {
   YANSHAN: "images/yanshan.png",
   ORACLE: "/images/oracle.png",
   APPLE: "/images/apple.png",
-  WALMART_LABS: "/images/walmart-labs.png"
+  WALMART_LABS: "/images/walmart-labs.png",
+};
+
+export const LINKS = {
+  GITHUB: "https://github.com/1846689910",
+  LINKEDIN: "https://www.linkedin.com/in/zuhuihe/",
+  EMAIL: "mailto:eric14706@gmail.com",
 };
 
 export const TABS = [
