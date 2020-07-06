@@ -71,7 +71,7 @@ export default function Experiences() {
         <ExpTitle
           {...{
             avatarSrc: INSTITUTE_ICON_PATH.APPLE,
-            title: "Full Stack Engineer contract, Apple Inc, Cupertino, CA",
+            title: "Full Stack Engineer Contract, Apple Inc, Cupertino, CA",
             range: "Jan 2018 - Jan 2019",
           }}
         />
