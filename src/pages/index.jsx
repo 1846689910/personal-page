@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     background: theme.palette.panel.dark,
     width: "70%",
     padding: "40px",
-    overflow: "scroll"
+    overflow: "auto"
   },
   desc: {
     fontSize: "18px",

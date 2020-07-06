@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
   grid: {
     background: theme.palette.panel.dark,
     height: "35vh",
-    overflow: "scroll",
+    overflow: "auto",
   },
 }));
 
