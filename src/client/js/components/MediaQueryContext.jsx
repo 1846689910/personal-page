@@ -31,7 +31,21 @@ export function MediaQueryProvider({ children }) {
   const isMobile = [QUERY.MOBILE_S, QUERY.MOBILE_M, QUERY.MOBILE_L].some(_ => media === _);
   const isLaptop = media === QUERY.LAPTOP || QUERY.LAPTOP_L;
   const isTablet = media === QUERY.TABLET;
-  return <Provider value={{ mediaQuery, media, isMobile, isLaptop, isTablet }}>{children}</Provider>;
+  const isTabletOrMobile = isTablet || isMobile;
+  return (
+    <Provider
+      value={{
+        mediaQuery,
+        media,
+        isMobile,
+        isLaptop,
+        isTablet,
+        isTabletOrMobile,
+      }}
+    >
+      {children}
+    </Provider>
+  );
 }
 MediaQueryProvider.propTypes = {
   children: PropTypes.oneOfType([

@@ -14,7 +14,7 @@ module.exports = compose(
   withSass,
   withLess,
   withStylus,
-  withBundleAnalyzer
+  withBundleAnalyzer,
 )({
   // TODO: work same as `withCss(withBundleAnalyzer({...}))`
   cssModules: true,
@@ -22,18 +22,21 @@ module.exports = compose(
     importLoaders: 1,
     localIdentName: `${
       enableShortHash ? "" : "[name]__[local]___"
-    }"[hash:base64:5]"`
+    }"[hash:base64:5]"`,
+    getLocalIdent(loaderContext, localIdentName, localName, options){
+      return loaderContext.resourcePath.includes("bootstrap.min.css")
+        ? localName
+        : localIdentName;
+    },
   },
-  webpack: config => config,
+  webpack: (config) => config,
   exportPathMap: async () => {
     return {
       "/": { page: "/" },
-      "/demo1": { page: "/demo1" },
-      "/demo2/[counter]": { page: "/demo2/[counter]" },
-      "/folders/[folderId]": { page: "/folders/[folderId]" },
-      "/folders/[folderId]/files/[fileId]": {
-        page: "/folders/[folderId]/files/[fileId]"
-      }
+      "/education": { page: "/education" },
+      "/skills": { page: "/skills" },
+      "/experiences": { page: "/experiences" },
+      "/contact": { page: "/contact" },
     };
   },
 });

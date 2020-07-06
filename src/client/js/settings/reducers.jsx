@@ -3,11 +3,14 @@ import { ActionTypes } from "./actions";
 export const initialState = {
   counter: { value: 0 },
   selectOptions: {
-    value: []
+    value: [],
   },
   selectedOption: {
-    value: []
-  }
+    value: [],
+  },
+  carouselIndex: {
+    value: 0,
+  },
 };
 const counter = (counter = initialState.counter, action) => {
   if (action.type === ActionTypes.SET_COUNTER_ACTION) {
@@ -23,7 +26,7 @@ const selectOptions = (selectOptions = initialState.selectOptions, action) => {
 };
 const selectedOption = (
   selectedOption = initialState.selectedOption,
-  action
+  action,
 ) => {
   if (action.type === ActionTypes.SET_SELECTED_OPTION_ACTION) {
     selectedOption.value = action.data;
@@ -31,8 +34,16 @@ const selectedOption = (
   return { ...selectedOption };
 };
 
+const carouselIndex = (carouseIndex = initialState.carouselIndex, action) => {
+  if (action.type === ActionTypes.SET_CAROUSEL_INDEX_ACTION) {
+    carouseIndex.value = action.data;
+  }
+  return { ...carouseIndex };
+};
+
 export const reducer = combineReducers({
   counter,
   selectOptions,
-  selectedOption
+  selectedOption,
+  carouselIndex,
 });
