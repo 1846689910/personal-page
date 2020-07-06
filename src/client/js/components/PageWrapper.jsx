@@ -7,8 +7,8 @@ import {
   IconButton,
   Link,
 } from "@material-ui/core";
-import Nav from "./Nav1";
-import BackgroundCarousel from "./Home/BackgroundCarousel";
+import Nav from "./Nav";
+import BackgroundCarousel from "./BackgroundCarousel";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GitHubIcon from "@material-ui/icons/GitHub";
 // import FacebookIcon from "@material-ui/icons/Facebook";

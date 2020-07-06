@@ -31,18 +31,19 @@ const dataSkills = [
   { name: "Python", value: 75 },
 ];
 
+const dataArray = [
+  new AccordionData(
+    <Typography>Web Development</Typography>,
+    webSkills.map((x, i) => <Skill {...x} key={i} />),
+    "web",
+  ),
+  new AccordionData(
+    <Typography>Data Engineering</Typography>,
+    dataSkills.map((x, i) => <Skill {...x} key={i} />),
+    "data",
+  ),
+];
+
 export default function Skills() {
-  const dataArray = [
-    new AccordionData(
-      <Typography>Web Development</Typography>,
-      webSkills.map((x, i) => <Skill {...x} key={i} />),
-      "web",
-    ),
-    new AccordionData(
-      <Typography>Data Engineering</Typography>,
-      dataSkills.map((x, i) => <Skill {...x} key={i} />),
-      "data",
-    ),
-  ];
   return <ControlledAccordion dataArray={dataArray} />;
 }
