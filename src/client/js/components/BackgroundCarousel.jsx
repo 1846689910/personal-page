@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid, makeStyles } from "@material-ui/core";
 import { Carousel } from "react-bootstrap";
-import { TABS } from "../../constants";
+import { TABS } from "../constants";
 import { useRouter } from "next/router";
 import "bootstrap/dist/css/bootstrap.min.css";
 
