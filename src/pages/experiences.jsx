@@ -21,17 +21,14 @@ export default function Experiences() {
         <ExpItem
           {...{
             summary:
-              "Maintained Electrode project of Walmart Labs and developed new features and for Electrode application and updated documentation",
+              "Develop large scale data processing pipelines and maintain and develop new features for internal web applications",
             details: [
-              "Updated sample project setup instructions in CONTRIBUTING.MD",
-              "Added hapi-app sample to Electrode project samples",
-              "Wrote Electrode-CCM-Middleware for Electrode Express project and wrote related tests with Mocha",
-              "Added command line in Electrode to create and support Koa sample app by using koa, koa-router, koa-static and koa-connect",
-              "Fixed config ui parameter bug and inline source map missing issue",
-              "Added new features that enable users to configure the babel preset environment targets for different ES versions in client side and node versions in server side",
-              "Built my own react project starters for both Client Side Rendering(CSR) and Server Side Rendering(SSR), both of which combine mocha tests, jest tests, integration tests with chrome driver and selenium, babel transpile command line and Hot Module Replacement(HMR) by webpack-dev-server and webpack-dev-middleware & webpack-hot-middleware",
-              "Created User Configurable Env Target to enable user to configure babel environment target and generate various bundles and detect to use bundles via browserslist-useragent",
-              "Solved issues for other teams to migrate to latest electrode archetype and implemented differential bundle servings",
+              "Develop several FusionX applications to enable map match data analysis and routing analysis",
+              "Develop new features and maintain internal map app Reddwarf and other pipeline related web apps (Redorbit, Pipeline-studio)",
+              "Update JobArtifacts and do regressing test for the job with specific input and setup, and publish job artifacts",
+              "Update Pipeline dependencies and publish and run pipelines on real data in Hadoop filesystem",
+              "Maintain and update probe data related pipelines by using Spark 2 and Scala 2.11",
+              "Work with other teams to address radar issues for our probe data related pipelines",
             ],
           }}
         />
@@ -52,14 +49,17 @@ export default function Experiences() {
         <ExpItem
           {...{
             summary:
-              "Develop large scale data processing pipelines and maintain and develop new features for internal web applications",
+              "Maintained Electrode project of Walmart Labs and developed new features and for Electrode application and updated documentation",
             details: [
-              "Develop several FusionX applications to enable map match data analysis and routing analysis",
-              "Develop new features and maintain internal map app Reddwarf and other pipeline related web apps (Redorbit, Pipeline-studio)",
-              "Update JobArtifacts and do regressing test for the job with specific input and setup, and publish job artifacts",
-              "Update Pipeline dependencies and publish and run pipelines on real data in Hadoop filesystem",
-              "Maintain and update probe data related pipelines by using Spark 2 and Scala 2.11",
-              "Work with other teams to address radar issues for our probe data related pipelines",
+              "Updated sample project setup instructions in CONTRIBUTING.MD",
+              "Added hapi-app sample to Electrode project samples",
+              "Wrote Electrode-CCM-Middleware for Electrode Express project and wrote related tests with Mocha",
+              "Added command line in Electrode to create and support Koa sample app by using koa, koa-router, koa-static and koa-connect",
+              "Fixed config ui parameter bug and inline source map missing issue",
+              "Added new features that enable users to configure the babel preset environment targets for different ES versions in client side and node versions in server side",
+              "Built my own react project starters for both Client Side Rendering(CSR) and Server Side Rendering(SSR), both of which combine mocha tests, jest tests, integration tests with chrome driver and selenium, babel transpile command line and Hot Module Replacement(HMR) by webpack-dev-server and webpack-dev-middleware & webpack-hot-middleware",
+              "Created User Configurable Env Target to enable user to configure babel environment target and generate various bundles and detect to use bundles via browserslist-useragent",
+              "Solved issues for other teams to migrate to latest electrode archetype and implemented differential bundle servings",
             ],
           }}
         />
