@@ -1,21 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Grid, makeStyles, Typography } from "@material-ui/core";
+import MediaQueryContext from "../MediaQueryContext";
 
 const useStyles = makeStyles((theme) => ({
-  descOuter: {
+  descOuter: attr => ({
     height: "40vh",
     background: theme.palette.panel.dark,
-    width: "70%",
-    padding: "40px",
+    width: attr.isTabletOrMobile ? "90%" : "70%",
+    padding: attr.isTabletOrMobile ? "10px" : "40px",
     overflow: "auto",
-  },
+  }),
   desc: {
     fontSize: "18px",
   },
 }));
 
 export default function Summary() {
-  const classes = useStyles();
+  const { isTabletOrMobile } = useContext(MediaQueryContext);
+  const classes = useStyles({ isTabletOrMobile });
   return (
     <Grid container item justify="center">
       <Grid item className={classes.descOuter}>
