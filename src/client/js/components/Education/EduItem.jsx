@@ -19,6 +19,9 @@ const useStyles = makeStyles({
   range: (attr) => ({
     textAlign: attr.isTabletOrMobile ? "center" : "unset",
   }),
+  degree: (attr) => ({
+    textAlign: attr.isTabletOrMobile ? "center" : "unset",
+  }),
 });
 
 export default function EduItem({
@@ -48,7 +51,7 @@ export default function EduItem({
           >
             {institute}
           </Typography>
-          <Typography variant={isTabletOrMobile ? "body1" : ""}>
+          <Typography className={classes.degree} variant={isTabletOrMobile ? "body1" : ""}>
             {degree}
           </Typography>
           {range && <Typography className={classes.range}>{range}</Typography>}
