@@ -21,6 +21,10 @@ const useStyles = makeStyles((theme) => ({
   gridInner: {
     width: "90%",
   },
+  gridDetail: {
+    maxHeight: "60vh",
+    overflow: "auto"
+  }
 }));
 
 export class AccordionData {
@@ -57,7 +61,7 @@ export default function ControlledAccordion({ dataArray }) {
               {summary}
             </AccordionSummary>
             <AccordionDetails>
-              <Grid item xs={12}>
+              <Grid item xs={12} className={classes.gridDetail}>
                 {detail}
               </Grid>
             </AccordionDetails>
