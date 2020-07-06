@@ -8,9 +8,9 @@ const useStyles = makeStyles({
   itemGrid: {
     margin: "5px 0",
   },
-  itemArrow: {
-    width: "10%",
-  },
+  itemArrow: attr => ({
+    width: attr.isTabletOrMobile ? "3%" : "10%",
+  }),
   itemText: attr => ({
     width: attr.isTabletOrMobile ? "85%" : "95%",
   }),
