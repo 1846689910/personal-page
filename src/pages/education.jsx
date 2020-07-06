@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Grid, Typography, makeStyles } from "@material-ui/core";
 import { INSTITUTE_ICON_PATH } from "../client/js/constants";
 import EduItem from "../client/js/components/Education/EduItem";
+import MediaQueryContext from "../client/js/components/MediaQueryContext";
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -64,10 +65,14 @@ const certificates = [
 ];
 
 export default function Education() {
-  const classes = useStyles();
+  const { isTabletOrMobile } = useContext(MediaQueryContext);
+  const classes = useStyles({ isTabletOrMobile });
   return (
     <Grid container direction="column">
-      <Typography variant="h5" className={classes.title}>
+      <Typography
+        variant={isTabletOrMobile ? "body1" : "h5"}
+        className={classes.title}
+      >
         DEGREES
       </Typography>
       <Grid className={classes.grid}>
@@ -75,7 +80,10 @@ export default function Education() {
           <EduItem {...x} key={i} />
         ))}
       </Grid>
-      <Typography variant="h5" className={classes.title}>
+      <Typography
+        variant={isTabletOrMobile ? "body1" : "h5"}
+        className={classes.title}
+      >
         CERTIFICATES
       </Typography>
       <Grid className={classes.grid}>
