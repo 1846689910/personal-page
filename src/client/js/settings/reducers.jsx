@@ -8,9 +8,6 @@ export const initialState = {
   selectedOption: {
     value: [],
   },
-  carouselIndex: {
-    value: 0,
-  },
 };
 const counter = (counter = initialState.counter, action) => {
   if (action.type === ActionTypes.SET_COUNTER_ACTION) {
@@ -34,16 +31,8 @@ const selectedOption = (
   return { ...selectedOption };
 };
 
-const carouselIndex = (carouseIndex = initialState.carouselIndex, action) => {
-  if (action.type === ActionTypes.SET_CAROUSEL_INDEX_ACTION) {
-    carouseIndex.value = action.data;
-  }
-  return { ...carouseIndex };
-};
-
 export const reducer = combineReducers({
   counter,
   selectOptions,
   selectedOption,
-  carouselIndex,
 });

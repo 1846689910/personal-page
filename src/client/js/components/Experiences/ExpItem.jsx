@@ -8,10 +8,10 @@ const useStyles = makeStyles({
   itemGrid: {
     margin: "5px 0",
   },
-  itemArrow: attr => ({
+  itemArrow: (attr) => ({
     width: attr.isTabletOrMobile ? "10%" : "3%",
   }),
-  itemText: attr => ({
+  itemText: (attr) => ({
     width: attr.isTabletOrMobile ? "85%" : "95%",
   }),
   range: (attr) => ({
@@ -25,7 +25,9 @@ export default function ExpItem({ summary, details }) {
   return (
     <Grid item xs={12} container direction="column">
       <Grid>
-        <Typography variant={isTabletOrMobile ? "" : "body1"}>{summary}</Typography>
+        <Typography variant={isTabletOrMobile ? "" : "body1"}>
+          {summary}
+        </Typography>
       </Grid>
       <Grid>
         {details.map((x, i) => (
@@ -75,12 +77,14 @@ export function ExpTitle({ avatarSrc, title, range }) {
       )}
       <Grid
         item
-        {...{
-          container: isTabletOrMobile,
-          justify: isTabletOrMobile ? "center" : "",
-        }}
+        {...(isTabletOrMobile
+          ? {
+              container: true,
+              justify: "center",
+            }
+          : {})}
       >
-        <Typography variant={isTabletOrMobile ? "" : "h6"}>{range}</Typography>
+        <Typography variant={isTabletOrMobile ? "inherit" : "h6"}>{range}</Typography>
       </Grid>
     </Grid>
   );

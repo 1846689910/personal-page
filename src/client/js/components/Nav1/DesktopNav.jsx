@@ -6,16 +6,12 @@ import {
   Button,
 } from "@material-ui/core";
 import clsx from "clsx";
-import { useDispatch } from "react-redux";
-import { setCarouselIndexAction } from "../../settings/actions";
 import { TABS } from "../../constants";
 
 export default function DesktopNav({ classes }) {
   const router = useRouter();
-  const dispatch = useDispatch();
   const handleClick = (tab, i) => {
     router.push(tab.path);
-    dispatch(setCarouselIndexAction(i));
   };
   return (
     <Grid container justify="space-evenly" className={classes.grid}>

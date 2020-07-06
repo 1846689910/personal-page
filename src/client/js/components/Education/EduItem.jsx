@@ -51,7 +51,7 @@ export default function EduItem({
           >
             {institute}
           </Typography>
-          <Typography className={classes.degree} variant={isTabletOrMobile ? "body1" : ""}>
+          <Typography className={classes.degree} variant={isTabletOrMobile ? "body1" : "inherit"}>
             {degree}
           </Typography>
           {range && <Typography className={classes.range}>{range}</Typography>}

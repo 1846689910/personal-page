@@ -7,20 +7,16 @@ import {
   MenuItem,
   IconButton,
 } from "@material-ui/core";
-import { useDispatch } from "react-redux";
-import { setCarouselIndexAction } from "../../settings/actions";
 import { TABS } from "../../constants";
 import MenuIcon from "@material-ui/icons/Menu";
 
 export default function MobileNav({ classes }) {
   const router = useRouter();
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const dispatch = useDispatch();
   const menuClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
   const handleClick = (tab, i) => {
-    dispatch(setCarouselIndexAction(i));
     setAnchorEl(null);
     router.push(tab.path);
   };
