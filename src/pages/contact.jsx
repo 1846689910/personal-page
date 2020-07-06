@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import {
   Grid,
   makeStyles,
@@ -11,6 +11,7 @@ import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import EmailIcon from "@material-ui/icons/Email";
 import { LINKS, IMAGE_PATH } from "../client/js/constants";
+import MediaQueryContext from "../client/js/components/MediaQueryContext";
 
 const useStyles = makeStyles((theme) => ({
   outer: {
@@ -20,11 +21,11 @@ const useStyles = makeStyles((theme) => ({
     height: "40vh",
     background: theme.palette.panel.dark,
   },
-  iconBtn: {
+  iconBtn: (attr) => ({
     color: "black",
-    width: "40px",
-    height: "40px",
-  },
+    width: attr.isTabletOrMobile ? "20px" : "40px",
+    height: attr.isTabletOrMobile ? "20px" : "40px",
+  }),
   popover: {
     marginTop: "65px",
   },
@@ -35,7 +36,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Contact() {
-  const classes = useStyles();
+  const { isTabletOrMobile } = useContext(MediaQueryContext);
+  const classes = useStyles({ isTabletOrMobile });
   const [anchorEl, setAnchorEl] = useState(null);
   const handlePopoverOpen = (event) => {
     setAnchorEl(event.currentTarget);
