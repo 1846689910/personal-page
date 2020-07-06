@@ -1,0 +1,40 @@
+import React from "react";
+import PropTypes from "prop-types";
+import { useRouter } from "next/router";
+import {
+  Grid,
+  Button,
+} from "@material-ui/core";
+import clsx from "clsx";
+import { useDispatch } from "react-redux";
+import { setCarouselIndexAction } from "../../settings/actions";
+import { TABS } from "../../constants";
+
+export default function DesktopNav({ classes }) {
+  const router = useRouter();
+  const dispatch = useDispatch();
+  const handleClick = (tab, i) => {
+    router.push(tab.path);
+    dispatch(setCarouselIndexAction(i));
+  };
+  return (
+    <Grid container justify="space-evenly" className={classes.grid}>
+      {TABS.map((tab, i) => (
+        <Button
+          key={i}
+          variant="contained"
+          className={clsx(
+            classes.btn,
+            router.pathname === tab.path ? classes.btnActive : "",
+          )}
+          onClick={() => handleClick(tab, i)}
+        >
+          {tab.label}
+        </Button>
+      ))}
+    </Grid>
+  );
+}
+DesktopNav.propTypes = {
+  classes: PropTypes.object
+};

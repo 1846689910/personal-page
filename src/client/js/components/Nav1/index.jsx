@@ -1,10 +1,8 @@
-import React from "react";
-import { useRouter } from "next/router";
-import { Grid, Button, makeStyles } from "@material-ui/core";
-import clsx from "clsx";
-import { useDispatch } from "react-redux";
-import { setCarouselIndexAction } from "../../settings/actions";
-import { TABS } from "../../constants";
+import React, { useContext } from "react";
+import { makeStyles } from "@material-ui/core";
+import MediaQueryContext from "../MediaQueryContext";
+import DesktopNav from "./DesktopNav";
+import MobileNav from "./MobileNav";
 
 const useStyles = makeStyles((theme) => ({
   grid: {
@@ -18,37 +16,31 @@ const useStyles = makeStyles((theme) => ({
     },
     width: "150px",
     height: "60px",
-    fontWeight: "bold"
+    fontWeight: "bold",
   },
   btnActive: {
     background: theme.palette.panel.dark,
     color: theme.palette.primary.main,
   },
+  menuIcon: {
+    fontSize: "50px",
+    border: "1px solid black",
+    padding: "5px",
+  },
+  menu: {
+    margin: "55px 0 0 0px",
+  },
+  menuItem: {
+    width: "200px",
+  },
 }));
 
 export default function Nav() {
-  const router = useRouter();
   const classes = useStyles();
-  const dispatch = useDispatch();
-  const handleClick = (tab, i) => {
-    router.push(tab.path);
-    dispatch(setCarouselIndexAction(i));
-  };
-  return (
-    <Grid container justify="space-evenly" className={classes.grid}>
-      {TABS.map((tab, i) => (
-        <Button
-          key={i}
-          variant="contained"
-          className={clsx(
-            classes.btn,
-            router.pathname === tab.path ? classes.btnActive : "",
-          )}
-          onClick={() => handleClick(tab, i)}
-        >
-          {tab.label}
-        </Button>
-      ))}
-    </Grid>
+  const { isMobile, isTablet } = useContext(MediaQueryContext);
+  return isMobile || isTablet ? (
+    <MobileNav classes={classes} />
+  ) : (
+    <DesktopNav classes={classes} />
   );
 }
