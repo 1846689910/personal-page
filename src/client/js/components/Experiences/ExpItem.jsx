@@ -9,7 +9,7 @@ const useStyles = makeStyles({
     margin: "5px 0",
   },
   itemArrow: attr => ({
-    width: attr.isTabletOrMobile ? "3%" : "10%",
+    width: attr.isTabletOrMobile ? "10%" : "3%",
   }),
   itemText: attr => ({
     width: attr.isTabletOrMobile ? "85%" : "95%",
