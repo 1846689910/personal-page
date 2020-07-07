@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
   },
   menuIcon: {
     fontSize: "50px",
-    border: "1px solid black",
+    border: "2px solid rgba(0,0,0,0.5)",
     padding: "5px",
   },
   menu: {

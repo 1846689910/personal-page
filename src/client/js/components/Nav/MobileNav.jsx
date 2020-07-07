@@ -26,7 +26,7 @@ export default function MobileNav({ classes }) {
   };
   return (
     <Grid container justify="flex-start" className={classes.grid}>
-      <IconButton onClick={menuClick} size="small">
+      <IconButton onClick={menuClick}>
         <MenuIcon className={classes.menuIcon} />
       </IconButton>
       <Menu

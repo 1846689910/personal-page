@@ -31,13 +31,13 @@ export const LINKS = {
 };
 
 export const TABS = [
-  { path: "/", label: "intro", bgPath: IMAGE_PATH.INTRO },
-  { path: "/education", label: "education", bgPath: IMAGE_PATH.EDUCATION },
-  { path: "/skills", label: "skills", bgPath: IMAGE_PATH.SKILLS },
+  { path: "/", label: "Intro", bgPath: IMAGE_PATH.INTRO },
+  { path: "/education", label: "Education", bgPath: IMAGE_PATH.EDUCATION },
+  { path: "/skills", label: "Skills", bgPath: IMAGE_PATH.SKILLS },
   {
     path: "/experiences",
-    label: "experiences",
+    label: "Experiences",
     bgPath: IMAGE_PATH.EXPERIENCES,
   },
-  { path: "/contact", label: "contact", bgPath: IMAGE_PATH.CONTACT },
+  { path: "/contact", label: "Contact", bgPath: IMAGE_PATH.CONTACT },
 ];

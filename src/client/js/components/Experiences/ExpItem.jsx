@@ -25,7 +25,7 @@ export default function ExpItem({ summary, details }) {
   return (
     <Grid item xs={12} container direction="column">
       <Grid>
-        <Typography variant={isTabletOrMobile ? "" : "body1"}>
+        <Typography variant={isTabletOrMobile ? "inherit" : "body1"}>
           {summary}
         </Typography>
       </Grid>
