@@ -1,6 +1,6 @@
 const { compose } = require("redux");
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
-  enabled: process.env.ANALYZE === "true"
+  enabled: process.env.ANALYZE === "true",
 });
 const withCss = require("@zeit/next-css");
 const withSass = require("@zeit/next-sass");
@@ -8,6 +8,16 @@ const withLess = require("@zeit/next-less");
 const withStylus = require("@zeit/next-stylus");
 
 const enableShortHash = true;
+
+// style files regexes
+// const cssRegex = /\.css$/;
+const cssModuleRegex = /\.module\.css$/;
+// const sassRegex = /\.(scss|sass)$/;
+const sassModuleRegex = /\.module\.(scss|sass)$/;
+// const lessRegex = /\.less$/;
+const lessModuleRegex = /\.module\.less/;
+// const stylusRegex = /\.styl$/;
+const stylusModuleRegex = /\.module\.styl$/;
 
 module.exports = compose(
   withCss,
@@ -23,10 +33,18 @@ module.exports = compose(
     localIdentName: `${
       enableShortHash ? "" : "[name]__[local]___"
     }"[hash:base64:5]"`,
-    getLocalIdent(loaderContext, localIdentName, localName, options){
-      return loaderContext.resourcePath.includes("bootstrap.min.css")
-        ? localName
-        : localIdentName;
+    getLocalIdent(loaderContext, localIdentName, localName, options) {
+      /** 
+      only apply the css module to the css files endswith .module.css, .module.scss, .module.sass, .module.less, .module.styl
+      */
+      return [
+        cssModuleRegex,
+        sassModuleRegex,
+        lessModuleRegex,
+        stylusModuleRegex,
+      ].some((regex) => regex.test(loaderContext.resourcePath))
+        ? localIdentName
+        : localName;
     },
   },
   webpack: (config) => config,
