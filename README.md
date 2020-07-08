@@ -1,5 +1,7 @@
 <h1>Personal Page</h1>
 
+[![Build Status](https://travis-ci.org/1846689910/personal-page.svg?branch=master)](https://travis-ci.org/1846689910/personal-page)
+
 #### [Demo](https://zuhuihe.vercel.app)
 
 ```
