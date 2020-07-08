@@ -1,4 +1,5 @@
 const { compose } = require("redux");
+const loaderUtils = require("loader-utils");
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
 });
@@ -31,8 +32,8 @@ module.exports = compose(
   cssLoaderOptions: {
     importLoaders: 1,
     localIdentName: `${
-      enableShortHash ? "" : "[name]__[local]___"
-    }"[hash:base64:5]"`,
+      enableShortHash ? "" : "[name]__[local]"
+    }"__[hash:base64:5]"`,
     getLocalIdent(loaderContext, localIdentName, localName, options) {
       /** 
       only apply the css module to the css files endswith .module.css, .module.scss, .module.sass, .module.less, .module.styl
@@ -43,7 +44,10 @@ module.exports = compose(
         lessModuleRegex,
         stylusModuleRegex,
       ].some((regex) => regex.test(loaderContext.resourcePath))
-        ? localIdentName
+        ? loaderUtils.interpolateName(loaderContext, localIdentName, {
+            // webpack in-built hash library, check doc: https://github.com/webpack/loader-utils#interpolatename
+            content: localName,
+          })
         : localName;
     },
   },
