@@ -7,6 +7,7 @@ import Skill from "../client/js/components/Skills/Skill";
 
 const webSkills = [
   { name: "JavaScript", value: 85 },
+  { name: "TypeScript", value: 80 },
   { name: "Node.js", value: 85 },
   { name: "Java", value: 79 },
   { name: "React", value: 89 },
@@ -16,6 +17,10 @@ const webSkills = [
   { name: "Hapi", value: 70 },
   { name: "Koa", value: 70 },
   { name: "Apollo GraphQL", value: 77 },
+  { name: "Mocha", value: 82 },
+  { name: "Jest", value: 80 },
+  { name: "Sinon", value: 85 },
+  { name: "Enzyme", value: 75 },
   { name: "Material-UI", value: 87 },
   { name: "MongoDB", value: 79 },
   { name: "MySQL", value: 80 },
