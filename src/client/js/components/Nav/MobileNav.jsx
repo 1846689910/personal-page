@@ -16,7 +16,7 @@ export default function MobileNav({ classes }) {
   const menuClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
-  const handleClick = (tab, i) => {
+  const handleClick = (tab, i) => {  // eslint-disable-line
     setAnchorEl(null);
     router.push(tab.path);
   };

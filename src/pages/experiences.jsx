@@ -4,6 +4,7 @@ import ControlledAccordion, {
 } from "../client/js/components/Skills/ControlledAccordion";
 import ExpItem, { ExpTitle } from "../client/js/components/Experiences/ExpItem";
 import { INSTITUTE_ICON_PATH } from "../client/js/constants";
+import { Link } from "@material-ui/core";
 
 export default function Experiences() {
   const dataArray = [
@@ -25,7 +26,7 @@ export default function Experiences() {
               "Created several useful FusionX JavaScript Plugins and publish to FusionX app stores to assist developers and data scientists to do map matching analysis, map routing and visualize map tileset data in HDFS",
               "Designed and implemented various Spark pipelines and job artifacts to fulfill large scale data processing and distributed computing",
               "Created web service and PostgreSQL database to manage pipeline and job artifact run status on Hadoop clusters",
-              "Published personal projects by React and Next.js for user to build large scale universal web app and services",
+              <span>Published personal projects by React(<Link href="https://github.com/1846689910/type-18-hek">type-18-hek</Link>) and Next.js(<Link href="https://github.com/1846689910/type-18-next">type-18-next</Link>) for user to build large scale universal web app and services</span>,
               "Worked closely with other map teams to address radar issues for pipelines and apps",
             ],
           }}
@@ -47,7 +48,7 @@ export default function Experiences() {
         <ExpItem
           {...{
             details: [
-              "Created functional Express and Koa middlewares and Hapi plugins for Electrode.io",
+              <span>Created functional Express and Koa middlewares and Hapi plugins for <Link href="https://github.com/electrode-io/electrode">Electrode.io</Link></span>,
               "Developed several function and performance oriented features, including support Koa server, server side rendering, dynamic loading and JavaScript bundle optimization, etc",
               "Wrote unit and integration test cases for components and project packages",
               "Actively addressed public issues on GitHub and JIRA issues reported by other teams",

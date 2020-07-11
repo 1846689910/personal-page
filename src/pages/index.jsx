@@ -7,7 +7,7 @@ import NameTitle from "../client/js/components/Home/NameTitle";
 import Summary from "../client/js/components/Home/Summary";
 
 export default function Index(props) {
-  const { shows } = props;
+  const { shows } = props;  // eslint-disable-line
 
   return (
     <Grid container direction="column">

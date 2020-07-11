@@ -53,7 +53,9 @@ export default function ExpItem({ summary, details }) {
 }
 ExpItem.propTypes = {
   summary: PropTypes.string,
-  details: PropTypes.arrayOf(PropTypes.string),
+  details: PropTypes.arrayOf(
+    PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+  ),
 };
 
 export function ExpTitle({ avatarSrc, title, range }) {
