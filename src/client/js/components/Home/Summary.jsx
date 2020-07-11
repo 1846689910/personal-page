@@ -23,11 +23,10 @@ export default function Summary() {
       <Grid item className={classes.descOuter}>
         <Typography variant="body1" className={classes.desc}>
           My expertise lies in Full Stack Development and Data Engineering. I
-          have gained strong knowledge and experience in web development through
+          have 3+ years of experience in web development through
           daily work and hands-on projects, with proficiency in JavaScript and
-          various web development frames and libraries and data engineering
-          skills in Apache Spark with Scala, Java. I have years work experience
-          and work as a Software Engineer right now. I am fluent in Chinese and
+          various web development frameworks and libraries and data engineering
+          skills in Apache Spark with Scala, Java. I am fluent in Chinese and
           English.
         </Typography>
         <br />
