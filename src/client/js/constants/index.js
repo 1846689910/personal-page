@@ -29,6 +29,7 @@ export const LINKS = {
   GITHUB: "https://github.com/1846689910",
   LINKEDIN: "https://www.linkedin.com/in/zuhuihe/",
   EMAIL: "mailto:eric14706@gmail.com",
+  RESUME: "/files/resume.pdf",
 };
 
 export const TABS = [
