@@ -10,7 +10,7 @@ import { TABS } from "../../constants";
 
 export default function DesktopNav({ classes }) {
   const router = useRouter();
-  const handleClick = (tab, i) => {
+  const handleClick = (tab, i) => {  // eslint-disable-line
     router.push(tab.path);
   };
   return (

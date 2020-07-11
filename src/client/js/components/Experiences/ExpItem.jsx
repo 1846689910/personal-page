@@ -25,9 +25,11 @@ export default function ExpItem({ summary, details }) {
   return (
     <Grid item xs={12} container direction="column">
       <Grid>
-        <Typography variant={isTabletOrMobile ? "inherit" : "body1"}>
-          {summary}
-        </Typography>
+        {summary && (
+          <Typography variant={isTabletOrMobile ? "inherit" : "body1"}>
+            {summary}
+          </Typography>
+        )}
       </Grid>
       <Grid>
         {details.map((x, i) => (
@@ -51,7 +53,9 @@ export default function ExpItem({ summary, details }) {
 }
 ExpItem.propTypes = {
   summary: PropTypes.string,
-  details: PropTypes.arrayOf(PropTypes.string),
+  details: PropTypes.arrayOf(
+    PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+  ),
 };
 
 export function ExpTitle({ avatarSrc, title, range }) {
@@ -84,7 +88,9 @@ export function ExpTitle({ avatarSrc, title, range }) {
             }
           : {})}
       >
-        <Typography variant={isTabletOrMobile ? "inherit" : "h6"}>{range}</Typography>
+        <Typography variant={isTabletOrMobile ? "inherit" : "h6"}>
+          {range}
+        </Typography>
       </Grid>
     </Grid>
   );

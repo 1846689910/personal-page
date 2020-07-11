@@ -14,6 +14,7 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 // import FacebookIcon from "@material-ui/icons/Facebook";
 import EmailIcon from "@material-ui/icons/Email";
 import { LINKS } from "../constants";
+import DescriptionIcon from "@material-ui/icons/Description";
 
 const useStyles = makeStyles((theme) => ({
   background: {
@@ -29,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
     position: "absolute",
     bottom: 0,
     left: "10vw",
-    maxWidth: "200px"
+    maxWidth: "200px",
   },
   bottomGridInner: {
     height: "40px",
@@ -86,6 +87,18 @@ function BottomLinks({ classes }) {
           </IconButton>
         </Grid>
       ))}
+      <Grid
+        className={classes.bottomGridInner}
+        container
+        justify="center"
+        alignItems="center"
+      >
+        <IconButton size="small">
+          <a href={LINKS.RESUME} target="_blank" download="ZUHUIHE_RESUME.pdf">
+            <DescriptionIcon className={classes.bottomIconBtn} />
+          </a>
+        </IconButton>
+      </Grid>
     </Grid>
   );
 }
