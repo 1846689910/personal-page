@@ -94,7 +94,7 @@ function BottomLinks({ classes }) {
         alignItems="center"
       >
         <IconButton size="small">
-          <a href={LINKS.RESUME} target="_blank" download="ZUHUIHE_RESUME.pdf">
+          <a href={LINKS.RESUME} target="_blank" download="ZUHUIHE.RESUME.pdf">
             <DescriptionIcon className={classes.bottomIconBtn} />
           </a>
         </IconButton>
