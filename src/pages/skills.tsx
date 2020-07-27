@@ -35,7 +35,7 @@ export default function Skills({
 /**
  * @param {Object} context { env }
  */
-export async function getStaticProps(context) {
+export async function getStaticProps(context) { // eslint-disable-line
   // eslint-disable-line
   const webSkills: ISkill[] = [
     { name: "JavaScript", value: 85 },

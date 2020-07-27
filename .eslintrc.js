@@ -40,5 +40,7 @@ module.exports = {
     "react/jsx-uses-react": 1,
     "react/jsx-uses-vars": 1,
     "react/react-in-jsx-scope": 1,
+    "@typescript-eslint/explicit-function-return-type": 0,
+    "@typescript-eslint/explicit-module-boundary-types": 0,
   },
 };

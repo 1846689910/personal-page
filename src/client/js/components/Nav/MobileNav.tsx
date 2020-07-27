@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { useRouter } from "next/router";
 import {
   Grid,
@@ -22,7 +21,7 @@ type MobileNavProps = {
 export default function MobileNav({ classes }: MobileNavProps) {
   const router = useRouter();
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const menuClick = (event: { currentTarget: any; }) => {
+  const menuClick = (event: { currentTarget: HTMLElement; }) => {
     setAnchorEl(event.currentTarget);
   };
   const handleClick = (tab: { path: string }, i) => {  // eslint-disable-line
