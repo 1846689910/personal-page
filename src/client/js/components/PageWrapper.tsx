@@ -18,7 +18,7 @@ import { LINKS } from "../constants";
 import DescriptionIcon from "@material-ui/icons/Description";
 // import GetAppIcon from "@material-ui/icons/GetApp";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme: { palette: { panel: { dark: string } } }) => ({
   background: {
     height: "100vh",
     width: "100vw",
@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function PageWrapper({ children }) {
+export default function PageWrapper({ children }: { children: React.ReactNode }) {
   const classes = useStyles();
   return (
     <Grid direction="row" container item className={classes.background}>
@@ -59,14 +59,15 @@ export default function PageWrapper({ children }) {
   );
 }
 
-PageWrapper.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.element,
-    PropTypes.arrayOf(PropTypes.element),
-  ]),
+type BottomLinksProps = {
+  classes: {
+    bottomGrid: string;
+    bottomGridInner: string;
+    bottomIconBtn: string;
+  }
 };
 
-function BottomLinks({ classes }) {
+function BottomLinks({ classes }: BottomLinksProps) {
   return (
     <Grid container justify="flex-start" className={classes.bottomGrid}>
       {[
@@ -110,6 +111,3 @@ function BottomLinks({ classes }) {
     </Grid>
   );
 }
-BottomLinks.propTypes = {
-  classes: PropTypes.object,
-};

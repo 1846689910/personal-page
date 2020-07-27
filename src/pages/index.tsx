@@ -1,12 +1,15 @@
 import React from "react";
-import PropTypes from "prop-types";
 import Promise from "bluebird";
 import { Grid } from "@material-ui/core";
 import AvatarImage from "../client/js/components/Home/AvatarImage";
 import NameTitle from "../client/js/components/Home/NameTitle";
 import Summary from "../client/js/components/Home/Summary";
 
-export default function Index(props) {
+type IndexProps = {
+  shows: number[]
+};
+
+export default function Index(props: IndexProps) {
   const { shows } = props;  // eslint-disable-line
 
   return (
@@ -17,9 +20,6 @@ export default function Index(props) {
     </Grid>
   );
 }
-Index.propTypes = {
-  shows: PropTypes.array,
-};
 
 /**
  * @description dev server end-point for path `/`, please check https://nextjs.org/docs/basic-features/data-fetching#getserversideprops-server-side-rendering
@@ -32,7 +32,7 @@ export async function getStaticProps(context) {
   return {
     props: {
       // will be passed to the page component as props
-      shows: data.map((entry) => entry.show),
+      shows: data.map((entry: { show: number }) => entry.show),
     },
   };
 }

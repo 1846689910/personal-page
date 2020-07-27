@@ -13,37 +13,39 @@ import EmailIcon from "@material-ui/icons/Email";
 import { LINKS, IMAGE_PATH } from "../client/js/constants";
 import MediaQueryContext from "../client/js/components/MediaQueryContext";
 
-const useStyles = makeStyles((theme) => ({
-  outer: {
-    height: "80vh",
-  },
-  inner: {
-    height: "40vh",
-    background: theme.palette.panel.dark,
-  },
-  iconBtn: (attr) => ({
-    color: "black",
-    width: attr.isTabletOrMobile ? "20px" : "40px",
-    height: attr.isTabletOrMobile ? "20px" : "40px",
+const useStyles = makeStyles(
+  (theme: { palette: { panel: { dark: string } } }) => ({
+    outer: {
+      height: "80vh",
+    },
+    inner: {
+      height: "40vh",
+      background: theme.palette.panel.dark,
+    },
+    iconBtn: (attr: { isTabletOrMobile: boolean }) => ({
+      color: "black",
+      width: attr.isTabletOrMobile ? "20px" : "40px",
+      height: attr.isTabletOrMobile ? "20px" : "40px",
+    }),
+    popover: {
+      marginTop: "65px",
+    },
+    qr: {
+      width: "140px",
+      height: "140px",
+    },
   }),
-  popover: {
-    marginTop: "65px",
-  },
-  qr: {
-    width: "140px",
-    height: "140px",
-  },
-}));
+);
 
-export default function Contact() {
+export default function Contact(): React.ReactChild {
   const { isTabletOrMobile } = useContext(MediaQueryContext);
   const classes = useStyles({ isTabletOrMobile });
-  const [anchorEl, setAnchorEl] = useState(null);
-  const handlePopoverOpen = (event) => {
+  const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
+  const handlePopoverOpen = (event: { currentTarget: React.SetStateAction<HTMLElement>; }): void => {
     setAnchorEl(event.currentTarget);
   };
 
-  const handlePopoverClose = () => {
+  const handlePopoverClose = (): void => {
     setAnchorEl(null);
   };
   return (

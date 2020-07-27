@@ -3,10 +3,10 @@ import { Grid, Avatar, makeStyles } from "@material-ui/core";
 import MediaQueryContext from "../MediaQueryContext";
 
 const useStyles = makeStyles({
-  avatarOuter: (attr) => ({
+  avatarOuter: (attr: { isTabletOrMobile: boolean }) => ({
     height: attr.isTabletOrMobile ? "20vh" : "30vh",
   }),
-  avatar: (attr) => ({
+  avatar: (attr: { isTabletOrMobile: boolean }) => ({
     height: attr.isTabletOrMobile ? "100px" : "150px",
     width: attr.isTabletOrMobile ? "100px" : "150px",
   }),
