@@ -1,7 +1,7 @@
 import React from "react";
-import PropTypes from "prop-types";
 import Status from "http-status";
 import { send } from "micro";
+import Http from "http";
 
 type AliveProps ={
   status: number;
@@ -10,7 +10,7 @@ type AliveProps ={
 const Alive = ({ status }: AliveProps): React.ReactNode => {
   console.log(status);
   return <></>;
-}
+};
 
 export default Alive;
 
@@ -19,7 +19,7 @@ export default Alive;
  * @param {Object} context { params, req, res, query, preview, previewData }
  * @returns {Object} the component props
  */
-export async function getServerSideProps(context: { res: object }) {
+export async function getServerSideProps(context: { res: Http.ServerResponse; }): Promise<{props: { status: number }}> {
   const { res } = context;
   send(res, Status.OK, "");  // in micro, `return "hello world"` is equivalent to `send(res, 200, "hello world")`
   return {
