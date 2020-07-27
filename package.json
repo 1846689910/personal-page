@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "NODE_ENV=test mocha",
+    "test": "NODE_ENV=test TS_NODE_PROJECT=tsconfig.test.json mocha",
     "browser-automation": "node scripts/browser-automation",
     "dev": "next",
     "start": "next start -p $PORT",
