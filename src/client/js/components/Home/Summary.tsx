@@ -2,8 +2,8 @@ import React, { useContext } from "react";
 import { Grid, makeStyles, Typography } from "@material-ui/core";
 import MediaQueryContext from "../MediaQueryContext";
 
-const useStyles = makeStyles((theme) => ({
-  descOuter: attr => ({
+const useStyles = makeStyles((theme: { palette: { panel: { dark: string } } }) => ({
+  descOuter: (attr: { isTabletOrMobile: boolean }) => ({
     height: "40vh",
     background: theme.palette.panel.dark,
     width: attr.isTabletOrMobile ? "90%" : "70%",

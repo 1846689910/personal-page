@@ -4,7 +4,19 @@ import MediaQueryContext from "../MediaQueryContext";
 import DesktopNav from "./DesktopNav";
 import MobileNav from "./MobileNav";
 
-const useStyles = makeStyles((theme) => ({
+type ThemeType = {
+  palette: {
+    panel: {
+      main: string;
+      dark: string;
+    },
+    primary: {
+      main: string;
+    }
+  }
+};
+
+const useStyles = makeStyles((theme: ThemeType) => ({
   grid: {
     margin: "20px 0",
   },
@@ -35,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Nav() {
+export default function Nav(): React.ReactElement {
   const classes = useStyles();
   const { isMobile, isTablet } = useContext(MediaQueryContext);
   return isMobile || isTablet ? (

@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useContext } from "react";
-import PropTypes from "prop-types";
 import {
   Grid,
   makeStyles,
@@ -18,10 +17,10 @@ const useStyles = makeStyles({
   },
 });
 
-export default function Skill({ name, value }) {
+export default function Skill({ name, value }: { name: string, value: number }) {
   const { isTabletOrMobile } = useContext(MediaQueryContext);
   const classes = useStyles({ isTabletOrMobile });
-  const [usedValue, setUsedValue] = useState(0);
+  const [usedValue, setUsedValue] = useState<number>(0);
   useEffect(() => {
     const timer = setInterval(() => {
       setUsedValue((prev) => (prev >= value ? value : prev + 5));
@@ -50,7 +49,3 @@ export default function Skill({ name, value }) {
     </Grid>
   );
 }
-Skill.propTypes = {
-  name: PropTypes.string,
-  value: PropTypes.number,
-};

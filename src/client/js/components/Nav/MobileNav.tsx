@@ -10,13 +10,22 @@ import {
 import { TABS } from "../../constants";
 import MenuIcon from "@material-ui/icons/Menu";
 
-export default function MobileNav({ classes }) {
+type MobileNavProps = {
+  classes: {
+    grid: string;
+    menuIcon: string;
+    menu: string;
+    menuItem: string;
+  }
+};
+
+export default function MobileNav({ classes }: MobileNavProps) {
   const router = useRouter();
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const menuClick = (event) => {
+  const menuClick = (event: { currentTarget: any; }) => {
     setAnchorEl(event.currentTarget);
   };
-  const handleClick = (tab, i) => {  // eslint-disable-line
+  const handleClick = (tab: { path: string }, i) => {  // eslint-disable-line
     setAnchorEl(null);
     router.push(tab.path);
   };
@@ -49,6 +58,3 @@ export default function MobileNav({ classes }) {
     </Grid>
   );
 }
-MobileNav.propTypes = {
-  classes: PropTypes.object,
-};

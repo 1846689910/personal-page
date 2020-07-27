@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
 import {
   Grid,
   Accordion,
@@ -10,41 +9,44 @@ import {
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { get } from "lodash";
 
-const useStyles = makeStyles((theme) => ({
-  accordion: {
-    width: "100%",
-    background: theme.palette.panel.dark,
-  },
-  gridOuter: {
-    width: "100%",
-  },
-  gridInner: {
-    width: "90%",
-  },
-  gridDetail: {
-    maxHeight: "60vh",
-    overflow: "auto"
-  }
-}));
+const useStyles = makeStyles(
+  (theme: { palette: { panel: { dark: string } } }) => ({
+    accordion: {
+      width: "100%",
+      background: theme.palette.panel.dark,
+    },
+    gridOuter: {
+      width: "100%",
+    },
+    gridInner: {
+      width: "90%",
+    },
+    gridDetail: {
+      maxHeight: "60vh",
+      overflow: "auto",
+    },
+  }),
+);
 
 export class AccordionData {
-  /**
-   *
-   * @param {React.Component | React.Component[]} summary
-   * @param {React.Component | React.Component[]} detail
-   * @param {String} group
-   */
-  constructor(summary, detail, group) {
+  summary: React.ReactChild | React.ReactChild[];
+  detail: React.ReactChild | React.ReactChild[];
+  group: string;
+  constructor(
+    summary: React.ReactChild | React.ReactChild[],
+    detail: React.ReactChild | React.ReactChild[],
+    group: string,
+  ) {
     this.summary = summary;
     this.detail = detail;
     this.group = group;
   }
 }
 
-export default function ControlledAccordion({ dataArray }) {
+export default function ControlledAccordion({ dataArray }: { dataArray: AccordionData[] }) {
   const classes = useStyles();
   const [expanded, setExpanded] = useState(get(dataArray, "0.group", false));
-  const handleChange = (panel) => (event, isExpanded) => {
+  const handleChange = (panel: string) => (event: React.ChangeEvent, isExpanded: boolean) => {
     setExpanded(isExpanded ? panel : false);
   };
   return (
@@ -71,6 +73,3 @@ export default function ControlledAccordion({ dataArray }) {
     </Grid>
   );
 }
-ControlledAccordion.propTypes = {
-  dataArray: PropTypes.arrayOf(AccordionData),
-};

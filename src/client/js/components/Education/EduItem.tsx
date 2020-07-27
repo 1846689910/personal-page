@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import PropTypes from "prop-types";
 import { Grid, makeStyles, Typography, Avatar } from "@material-ui/core";
 import MediaQueryContext from "../MediaQueryContext";
 
@@ -8,21 +7,29 @@ const useStyles = makeStyles({
     width: "80px",
     height: "80px",
   },
-  textOuter: (attr) => ({
+  textOuter: (attr: { isTabletOrMobile: boolean }) => ({
     width: attr.isTabletOrMobile ? "100%" : "70%",
     margin: attr.isTabletOrMobile ? "10px 0px" : "10px 40px",
   }),
-  institute: (attr) => ({
+  institute: (attr: { isTabletOrMobile: boolean }) => ({
     textAlign: attr.isTabletOrMobile ? "center" : "unset",
     fontWeight: attr.isTabletOrMobile ? "bold" : "unset",
   }),
-  range: (attr) => ({
+  range: (attr: { isTabletOrMobile: boolean }) => ({
     textAlign: attr.isTabletOrMobile ? "center" : "unset",
   }),
-  degree: (attr) => ({
+  degree: (attr: { isTabletOrMobile: boolean }) => ({
     textAlign: attr.isTabletOrMobile ? "center" : "unset",
   }),
 });
+
+type EduItemProps = {
+  imageSrc: string;
+  imageAlt: string;
+  institute: string;
+  degree: string;
+  range: string;
+}
 
 export default function EduItem({
   imageSrc,
@@ -30,7 +37,7 @@ export default function EduItem({
   institute,
   degree,
   range,
-}) {
+}: EduItemProps) {
   const { isTabletOrMobile } = useContext(MediaQueryContext);
   const classes = useStyles({ isTabletOrMobile });
   return (
@@ -60,10 +67,3 @@ export default function EduItem({
     </Grid>
   );
 }
-EduItem.propTypes = {
-  imageSrc: PropTypes.string,
-  imageAlt: PropTypes.string,
-  institute: PropTypes.string,
-  degree: PropTypes.string,
-  range: PropTypes.string,
-};

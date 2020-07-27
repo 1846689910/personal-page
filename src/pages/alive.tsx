@@ -3,20 +3,23 @@ import PropTypes from "prop-types";
 import Status from "http-status";
 import { send } from "micro";
 
-export default function Alive({ status }) {
+type AliveProps ={
+  status: number;
+}
+
+const Alive = ({ status }: AliveProps): React.ReactNode => {
   console.log(status);
   return <></>;
 }
-Alive.propTypes = {
-  status: PropTypes.number,
-};
+
+export default Alive;
 
 /**
  * @description for /alive of micro server(https://www.npmjs.com/package/micro)
  * @param {Object} context { params, req, res, query, preview, previewData }
  * @returns {Object} the component props
  */
-export async function getServerSideProps(context) {
+export async function getServerSideProps(context: { res: object }) {
   const { res } = context;
   send(res, Status.OK, "");  // in micro, `return "hello world"` is equivalent to `send(res, 200, "hello world")`
   return {

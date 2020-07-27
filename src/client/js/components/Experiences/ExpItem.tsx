@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import PropTypes from "prop-types";
 import { Grid, Typography, Avatar, makeStyles } from "@material-ui/core";
 import ArrowRightIcon from "@material-ui/icons/ArrowRight";
 import MediaQueryContext from "../MediaQueryContext";
@@ -8,18 +7,18 @@ const useStyles = makeStyles({
   itemGrid: {
     margin: "5px 0",
   },
-  itemArrow: (attr) => ({
+  itemArrow: (attr: { isTabletOrMobile: boolean }) => ({
     width: attr.isTabletOrMobile ? "10%" : "3%",
   }),
-  itemText: (attr) => ({
+  itemText: (attr: { isTabletOrMobile: boolean }) => ({
     width: attr.isTabletOrMobile ? "85%" : "95%",
   }),
-  range: (attr) => ({
+  range: (attr: { isTabletOrMobile: boolean }) => ({
     textAlign: attr.isTabletOrMobile ? "center" : "unset",
   }),
 });
 
-export default function ExpItem({ summary, details }) {
+export default function ExpItem({ summary, details }: { summary?: string, details: React.ReactChild[] }) {
   const { isTabletOrMobile } = useContext(MediaQueryContext);
   const classes = useStyles({ isTabletOrMobile });
   return (
@@ -32,7 +31,7 @@ export default function ExpItem({ summary, details }) {
         )}
       </Grid>
       <Grid>
-        {details.map((x, i) => (
+        {details.map((x: React.ReactChild, i: number) => (
           <Grid
             key={i}
             container
@@ -51,14 +50,8 @@ export default function ExpItem({ summary, details }) {
     </Grid>
   );
 }
-ExpItem.propTypes = {
-  summary: PropTypes.string,
-  details: PropTypes.arrayOf(
-    PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
-  ),
-};
 
-export function ExpTitle({ avatarSrc, title, range }) {
+export function ExpTitle({ avatarSrc, title, range }: { avatarSrc: string, title: string, range: string }) {
   const { isTabletOrMobile } = useContext(MediaQueryContext);
   return (
     <Grid container justify="space-between" direction="row">
@@ -95,8 +88,3 @@ export function ExpTitle({ avatarSrc, title, range }) {
     </Grid>
   );
 }
-ExpTitle.propTypes = {
-  avatarSrc: PropTypes.string,
-  title: PropTypes.string,
-  range: PropTypes.string,
-};

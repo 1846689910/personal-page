@@ -1,5 +1,5 @@
 import App from "next/app";
-import React from "react";
+import * as React from "react";
 import withReduxStore from "../client/js/settings/with-redux-store";
 import { Provider } from "react-redux";
 import { ThemeProvider } from "@material-ui/styles";
@@ -12,12 +12,14 @@ import "../client/styles/App.styl";
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "@apollo/react-hooks";
 import { MediaQueryProvider } from "../client/js/components/MediaQueryContext";
-import fetch from "node-fetch";
+import { Store } from "redux";
 import PageWrapper from "../client/js/components/PageWrapper";
 
-global.fetch = fetch;
+interface AppProps {
+  store: Store;
+}
 
-class _App extends App {
+class _App extends App<AppProps> {
   componentDidMount() {
     // Remove the server-side injected CSS.
     const jssStyles = document.querySelector("#jss-server-side");
