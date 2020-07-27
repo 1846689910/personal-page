@@ -6,6 +6,7 @@ import {
   Container,
   IconButton,
   Link,
+  Tooltip,
 } from "@material-ui/core";
 import Nav from "./Nav";
 import BackgroundCarousel from "./BackgroundCarousel";
@@ -15,6 +16,7 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 import EmailIcon from "@material-ui/icons/Email";
 import { LINKS } from "../constants";
 import DescriptionIcon from "@material-ui/icons/Description";
+// import GetAppIcon from "@material-ui/icons/GetApp";
 
 const useStyles = makeStyles((theme) => ({
   background: {
@@ -93,11 +95,17 @@ function BottomLinks({ classes }) {
         justify="center"
         alignItems="center"
       >
-        <IconButton size="small">
-          <a href={LINKS.RESUME} target="_blank" download="ZUHUIHE.RESUME.pdf">
-            <DescriptionIcon className={classes.bottomIconBtn} />
-          </a>
-        </IconButton>
+        <Tooltip title="download resume" placement="top">
+          <IconButton size="small">
+            <a
+              href={LINKS.RESUME}
+              target="_blank"
+              download="ZUHUIHE.RESUME.pdf"
+            >
+              <DescriptionIcon className={classes.bottomIconBtn} />
+            </a>
+          </IconButton>
+        </Tooltip>
       </Grid>
     </Grid>
   );
