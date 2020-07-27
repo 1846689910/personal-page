@@ -5,16 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "NODE_ENV=test TS_NODE_PROJECT=tsconfig.test.json mocha",
-    "browser-automation": "node scripts/browser-automation",
     "dev": "next",
     "start": "next start -p $PORT",
     "build": "next build",
     "export": "next export",
     "be": "next build; next export",
     "analyze": "cross-env ANALYZE=true next build",
-    "express": "node scripts/express",
-    "koa": "node scripts/koa",
-    "hapi": "node scripts/hapi",
     "lint": "eslint src/* --ext .js,.jsx,.ts,.tsx --no-error-on-unmatched-pattern"
   },
   "keywords": [],
