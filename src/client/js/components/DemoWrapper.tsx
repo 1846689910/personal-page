@@ -33,4 +33,4 @@ export default function DemoWrapper({ children, title }: DemoWrapperProps) {
       {children}
     </Grid>
   );
-};
+}

@@ -5,7 +5,7 @@ import ControlledAccordion, {
 } from "../client/js/components/Skills/ControlledAccordion";
 import Skill from "../client/js/components/Skills/Skill";
 
-interface Skill {
+interface ISkill {
   name: string;
   value: number;
 }
@@ -14,18 +14,18 @@ export default function Skills({
   webSkills,
   dataSkills,
 }: {
-  webSkills: Skill[];
-  dataSkills: Skill[];
+  webSkills: ISkill[];
+  dataSkills: ISkill[];
 }) {
   const dataArray = [
     new AccordionData(
       <Typography>Web Development</Typography>,
-      webSkills.map((x: Skill, i: number) => <Skill {...x} key={i} />),
+      webSkills.map((x: ISkill, i: number) => <Skill {...x} key={i} />),
       "web",
     ),
     new AccordionData(
       <Typography>Data Engineering</Typography>,
-      dataSkills.map((x: Skill, i: number) => <Skill {...x} key={i} />),
+      dataSkills.map((x: ISkill, i: number) => <Skill {...x} key={i} />),
       "data",
     ),
   ];
@@ -35,9 +35,9 @@ export default function Skills({
 /**
  * @param {Object} context { env }
  */
-export async function getStaticProps(context) {
+export async function getStaticProps(context) { // eslint-disable-line
   // eslint-disable-line
-  const webSkills: Skill[] = [
+  const webSkills: ISkill[] = [
     { name: "JavaScript", value: 85 },
     { name: "TypeScript", value: 80 },
     { name: "Node.js", value: 85 },
@@ -61,7 +61,7 @@ export async function getStaticProps(context) {
     { name: "CSS3", value: 87 },
   ];
 
-  const dataSkills: Skill[] = [
+  const dataSkills: ISkill[] = [
     { name: "Scala", value: 80 },
     { name: "Hadoop", value: 73 },
     { name: "Spark", value: 75 },

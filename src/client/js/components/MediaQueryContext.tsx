@@ -3,7 +3,14 @@ import json2mq from "json2mq";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 type ContextState = {
-  mediaQuery: object;
+  mediaQuery: {
+    mobileS: boolean;
+    mobileM: boolean;
+    mobileL: boolean;
+    tablet: boolean;
+    laptop: boolean;
+    laptopL: boolean;
+  };
   media: string;
   isMobile: boolean;
   isLaptop: boolean;
