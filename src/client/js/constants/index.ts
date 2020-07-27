@@ -32,7 +32,13 @@ export const LINKS = {
   RESUME: "/files/ZUHUIHE.RESUME.pdf",
 };
 
-export const TABS = [
+export interface Tab {
+  path: string;
+  label: string;
+  bgPath: string;
+}
+
+export const TABS: Tab[] = [
   { path: "/", label: "Intro", bgPath: IMAGE_PATH.INTRO },
   { path: "/education", label: "Education", bgPath: IMAGE_PATH.EDUCATION },
   { path: "/skills", label: "Skills", bgPath: IMAGE_PATH.SKILLS },

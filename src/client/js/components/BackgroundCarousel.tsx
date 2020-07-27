@@ -16,18 +16,17 @@ const useStyles = makeStyles({
 
 export default function BackgroundCarousel() {
   const router = useRouter();
-  const carouselIndex = TABS.findIndex(tab => tab.path === router.pathname); // useSelector((state) => state.carouselIndex.value);
+  const carouselIndex = TABS.findIndex((tab) => tab.path === router.pathname); // useSelector((state) => state.carouselIndex.value);
   const classes = useStyles();
-  const settings = {
-    activeIndex: carouselIndex,
-    pause: false,
-    controls: false,
-    indicators: false,
-  };
   return (
     <Grid className={classes.grid}>
-      <Carousel {...settings}>
-        {TABS.map(({bgPath}, i) => (
+      <Carousel
+        activeIndex={carouselIndex}
+        pause={false}
+        controls={false}
+        indicators={false}
+      >
+        {TABS.map(({ bgPath }, i) => (
           <Carousel.Item key={i}>
             <div
               style={{
