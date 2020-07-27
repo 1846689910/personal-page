@@ -1,5 +1,5 @@
 import App from "next/app";
-import React from "react";
+import * as React from "react";
 import withReduxStore from "../client/js/settings/with-redux-store";
 import { Provider } from "react-redux";
 import { ThemeProvider } from "@material-ui/styles";
