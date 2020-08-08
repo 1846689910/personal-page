@@ -12,7 +12,7 @@ interface ISkill {
 }
 
 export default function Skills() {
-  const { queryWebSkills, queryDataSkills } = useContext(GraphqlContext);
+  const { queryWebSkills, queryDataSkills, getQuerySkill } = useContext(GraphqlContext);
   const [webSkills, setWebSkills] = useState([] as ISkill[]);
   const [dataSkills, setDataSkills] = useState([] as ISkill[]);
   useEffect(() => {
@@ -22,8 +22,9 @@ export default function Skills() {
     if (queryDataSkills.data) {
       setDataSkills(queryDataSkills.data.dataSkills as ISkill[]);
     }
-
   }, [queryWebSkills, queryDataSkills]);
+  const querySkill = getQuerySkill({ name: "TypeScript" });
+  console.log(querySkill);
   const dataArray = [
     new AccordionData(
       <Typography>Web Development</Typography>,
