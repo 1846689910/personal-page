@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { createContext, useState } from "react";
+import React, { createContext } from "react";
 import { useQuery } from "@apollo/react-hooks";
 import { QueryResult } from "@apollo/react-common";
 import { gql } from "apollo-boost";

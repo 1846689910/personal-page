@@ -1,6 +1,7 @@
-import React, { Fragment, useContext } from "react";
+import React, { Fragment, useContext, useEffect, useState } from "react";
 import { Grid, makeStyles, Typography } from "@material-ui/core";
 import MediaQueryContext from "../MediaQueryContext";
+import GraphqlContext from "../GraphqlContext";
 
 const useStyles = makeStyles({
   name: {
@@ -11,6 +12,13 @@ const useStyles = makeStyles({
 export default function NameTitle() {
   const classes = useStyles();
   const { isTabletOrMobile } = useContext(MediaQueryContext);
+  const { queryName, queryTitle } = useContext(GraphqlContext);
+  const [name, setName] = useState("");
+  const [title, setTitle] = useState("");
+  useEffect(() => {
+    if (queryName.data) setName(queryName.data.name);
+    if (queryTitle.data) setTitle(queryTitle.data.title);
+  }, [queryName, queryTitle]);
   return (
     <Fragment>
       <Grid item container justify="center">
@@ -18,7 +26,7 @@ export default function NameTitle() {
           className={classes.name}
           variant={isTabletOrMobile ? "h5" : "h3"}
         >
-          Zuhui(Eric) He
+          { name }
         </Typography>
       </Grid>
       <Grid item container justify="center">
@@ -26,7 +34,7 @@ export default function NameTitle() {
           className={classes.name}
           variant={isTabletOrMobile ? "body1" : "h4"}
         >
-          Software Engineer @ Apple Inc.
+          { title }
         </Typography>
       </Grid>
     </Fragment>
