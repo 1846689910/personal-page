@@ -1,4 +1,5 @@
-import React, { createContext } from "react";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import React, { createContext, useState } from "react";
 import { useQuery } from "@apollo/react-hooks";
 import { QueryResult } from "@apollo/react-common";
 import { gql } from "apollo-boost";
@@ -52,15 +53,15 @@ export const SUMMARY = gql`
 `;
 
 type GraphqlContextProps = {
-  queryName: QueryResult<string, unknown>;
-  queryTitle: QueryResult<string, unknown>;
-  querySummary: QueryResult<string, unknown>;
-  querySkills: QueryResult<string, unknown>;
-  queryDataSkills: QueryResult<string, unknown>;
-  queryWebSkills: QueryResult<string, unknown>;
+  queryName: QueryResult<any, Record<string, any>>;
+  queryTitle: QueryResult<any, Record<string, any>>;
+  querySummary: QueryResult<any, Record<string, any>>;
+  querySkills: QueryResult<any, Record<string, any>>;
+  queryDataSkills: QueryResult<any, Record<string, any>>;
+  queryWebSkills: QueryResult<any, Record<string, any>>;
   getQuerySkill: (
     variables: Record<string, unknown>,
-  ) => QueryResult<string, unknown>;
+  ) => QueryResult<any, Record<string, any>>;
 };
 
 const GraphqlContext = createContext({} as GraphqlContextProps);
@@ -74,7 +75,6 @@ export const GraphqlContextProvider = ({
 }) => {
   const { Provider } = GraphqlContext;
   const queryName = useQuery(NAME);
-  console.log(queryName);
   const queryTitle = useQuery(TITLE);
   const querySummary = useQuery(SUMMARY);
   const querySkills = useQuery(SKILLS);
