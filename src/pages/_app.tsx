@@ -12,6 +12,7 @@ import "../client/styles/App.styl";
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "@apollo/react-hooks";
 import { MediaQueryProvider } from "../client/js/components/MediaQueryContext";
+import { GraphqlContextProvider } from "../client/js/components/GraphqlContext";
 import { Store } from "redux";
 import PageWrapper from "../client/js/components/PageWrapper";
 
@@ -27,7 +28,7 @@ class _App extends App<AppProps> {
       jssStyles.parentElement.removeChild(jssStyles);
     }
   }
-  static graphqlUri = "/graphql"; // default value
+  static graphqlUri = "https://micro-bus-aleofcylz.vercel.app/api/personal-page"//"/graphql"; // default value
   render() {
     const { Component, pageProps, store } = this.props;
     const apolloClient = new ApolloClient({
@@ -40,9 +41,11 @@ class _App extends App<AppProps> {
             <CssBaseline />
             {/* Kickstart an elegant, consistent, and simple baseline to build upon. */}
             <MediaQueryProvider>
-              <PageWrapper>
-                <Component {...pageProps} />
-              </PageWrapper>
+              <GraphqlContextProvider>
+                <PageWrapper>
+                  <Component {...pageProps} />
+                </PageWrapper>
+              </GraphqlContextProvider>
             </MediaQueryProvider>
           </ThemeProvider>
         </ApolloProvider>
